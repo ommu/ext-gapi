@@ -185,7 +185,6 @@ class gapi {
 			// Perhaps we are receiving a Unix timestamp.
 			$start_date = date('Y-m-d', $start_date);
 		}
-
 		$parameters['start-date'] = $start_date;
 
 		if ($end_date==null) {
@@ -194,7 +193,6 @@ class gapi {
 			// Perhaps we are receiving a Unix timestamp.
 			$end_date = date('Y-m-d', $end_date);
 		}
-
 		$parameters['end-date'] = $end_date;
 
 

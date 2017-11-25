@@ -5,7 +5,7 @@
  * @author Putra Sudaryanto <putra@sudaryanto.id>
  * @copyright Copyright (c) 2017 Ommu Platform (opensource.ommu.co)
  * @created date 12 May 2017, 15:28 WIB
- * @link https://github.com/ommu/gapi-google-analytics-ext-for-ommu
+ * @link https://github.com/ommu/ommu-gapi
  * @contact (+62)856-299-4114
  */
  

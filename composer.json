@@ -1,6 +1,6 @@
 {
 	"name": "ommu/gapi-google-analytics-php-interface",
-	"description": "Google Analytic PHP Interface for Ommu Platform",
+	"description": "Google Analytic PHP Interface",
 	"keywords": [
 		"extension",
 		"google analytics",
@@ -33,7 +33,6 @@
 	],
 	"require": {
 		"php": ">=5.3.2",
-		"oomphinc/composer-installers-extender": "^1.0",
-		"yiisoft/yii": ">=1.1.14"
+		"oomphinc/composer-installers-extender": "^1.0"
 	}
 }

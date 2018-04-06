@@ -1,6 +1,6 @@
 {
 	"name": "ommu/gapi-google-analytics-php-interface",
-	"description": "Google Analytic PHP Interface",
+	"description": "Google Analytic PHP Interface from Ommu Platform",
 	"keywords": [
 		"extension",
 		"google analytics",
@@ -8,7 +8,6 @@
 		"analytics",
 		"ga",
 		"ommu",
-		"platform",
 		"ommu platform"
 	],
 	"homepage": "https://github.com/ommu/ext-gapi",

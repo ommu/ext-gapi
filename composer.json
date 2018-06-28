@@ -8,7 +8,7 @@
 		"analytics",
 		"ga",
 		"ommu",
-		"ommu platform"
+		"ommu-platform"
 	],
 	"homepage": "https://github.com/ommu/ext-gapi",
 	"type": "ommu-extension",

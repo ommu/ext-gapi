@@ -1,18 +1,19 @@
 {
-	"name": "ommu/gapi-google-analytics-php-interface",
+	"name": "ommu/yii2-gapi",
 	"description": "Google Analytic PHP Interface from Ommu Platform",
+	"type": "ommu-extension",
 	"keywords": [
 		"extension",
-		"google analytics",
+		"google-analytics",
+		"ga",
 		"google",
 		"analytics",
-		"ga",
 		"ommu",
-		"ommu-platform"
+		"ommu-platform",
+		"yii2"
 	],
-	"homepage": "https://github.com/ommu/ext-gapi",
-	"type": "ommu-extension",
 	"license": "Apache-2.0",
+	"homepage": "https://github.com/ommu/ext-gapi",
 	"support": {
 		"issues": "https://github.com/ommu/ext-gapi/issues",
 		"wiki": "https://github.com/ommu/ext-gapi/wiki",
@@ -26,12 +27,16 @@
 		{
 			"name": "Putra Sudaryanto",
 			"email": "putra@sudaryanto.id",
-			"homepage": "https://putra.sudaryanto.id",
-			"role": "Creator"
+			"homepage": "https://sudaryanto.id",
+			"role": "Modifier"
 		}
 	],
 	"require": {
-		"php": ">=5.3.2",
-		"oomphinc/composer-installers-extender": "^1.0"
+		"yiisoft/yii2": "2.0.*"
+	},
+	"autoload": {
+		"psr-4": {
+			"ommu\\gapi\\": ""
+		}
 	}
 }

@@ -52,7 +52,7 @@ class gapiOAuth2
 
 		if(!file_exists($key_file)) {
 			if(!file_exists(__DIR__ . DIRECTORY_SEPARATOR . $key_file))
-				throw new Exception(Yii::t('phrase', 'GAPI: Failed load key file $key_file File could not be found.', array('$key_file'=>$key_file)));
+				throw new Exception(Yii::t('app', 'GAPI: Failed load key file $key_file File could not be found.', array('$key_file'=>$key_file)));
 			else
 				$key_file = __DIR__ . DIRECTORY_SEPARATOR . $key_file;
 		}
@@ -60,12 +60,12 @@ class gapiOAuth2
 		$key_data = file_get_contents($key_file);
 		
 		if(empty($key_data))
-			throw new Exception(Yii::t('phrase', 'GAPI: Failed load key file $key_file File could not be opened or is empty.', array('$key_file'=>$key_file)));
+			throw new Exception(Yii::t('app', 'GAPI: Failed load key file $key_file File could not be opened or is empty.', array('$key_file'=>$key_file)));
 
 		openssl_pkcs12_read($key_data, $certs, 'notasecret');
 
 		if(!isset($certs['pkey']))
-			throw new Exception(Yii::t('phrase', 'GAPI: Failed load key file $key_file Unable to load pkcs12 check if correct p12 format.', array('$key_file'=>$key_file)));
+			throw new Exception(Yii::t('app', 'GAPI: Failed load key file $key_file Unable to load pkcs12 check if correct p12 format.', array('$key_file'=>$key_file)));
 
 		openssl_sign($data, $signature, openssl_pkey_get_private($certs['pkey']), "sha256");
 
@@ -81,9 +81,9 @@ class gapiOAuth2
 
 		if(substr($response['code'], 0, 1) != '2' || !is_array($auth_token) || empty($auth_token['access_token']))
 			return false;
-			//Yii::app()->user->setFlash('analytic-api-error', Yii::t('phrase', 'GAPI: Failed to authenticate user. Error: $error', array('$error'=>strip_tags($response['body']))));
-			//throw new Exception(Yii::t('phrase', 'GAPI: Failed to authenticate user. Error: $error', array('$error'=>strip_tags($response['body']))));
-			//throw new CHttpException(404, Yii::t('phrase', 'GAPI: Failed to authenticate user. Error: $error', array('$error'=>strip_tags($response['body']))));
+			//Yii::app()->user->setFlash('analytic-api-error', Yii::t('app', 'GAPI: Failed to authenticate user. Error: $error', array('$error'=>strip_tags($response['body']))));
+			//throw new Exception(Yii::t('app', 'GAPI: Failed to authenticate user. Error: $error', array('$error'=>strip_tags($response['body']))));
+			//throw new CHttpException(404, Yii::t('app', 'GAPI: Failed to authenticate user. Error: $error', array('$error'=>strip_tags($response['body']))));
 
 		$this->auth_token = $auth_token['access_token'];
 

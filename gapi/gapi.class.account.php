@@ -49,7 +49,7 @@ class gapiAccountEntry
 	public function __call($name, $parameters) 
 	{
 		if(!preg_match('/^get/', $name))
-			throw new Exception(Yii::t('phrase', 'No such function $name', array('$name'=>$name)));
+			throw new Exception(Yii::t('app', 'No such function $name', array('$name'=>$name)));
 
 		$name = preg_replace('/^get/', '', $name);
 		$property_key = gapi::ArrayKeyExists($name, $this->properties);
@@ -57,7 +57,7 @@ class gapiAccountEntry
 		if($property_key)
 			return $this->properties[$property_key];
 
-		throw new Exception(Yii::t('phrase', 'No valid property called $name', array('$name'=>$name)));
+		throw new Exception(Yii::t('app', 'No valid property called $name', array('$name'=>$name)));
 	}
 }
 ?>

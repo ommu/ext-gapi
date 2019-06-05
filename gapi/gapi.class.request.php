@@ -76,7 +76,7 @@ class gapiRequest
 			case 'fopen':
 				return $this->fopenRequest($get_variables, $post_variables, $headers);
 			default:
-				throw new Exception(Yii::t('phrase', 'Invalid http interface defined. No such interface $error', array('$error'=>self::http_interface)));
+				throw new Exception(Yii::t('app', 'Invalid http interface defined. No such interface $error', array('$error'=>self::http_interface)));
 		}
 	}
 
@@ -161,7 +161,7 @@ class gapiRequest
 		$context = stream_context_create(array('http'=>$http_options));
 		$response = @file_get_contents($this->url . $get_variables, null, $context);
 		
-		$body = $response !== false ? $response : Yii::t('phrase', 'Request failed, consider using php5-curl module for more information.');
+		$body = $response !== false ? $response : Yii::t('app', 'Request failed, consider using php5-curl module for more information.');
 		$code = $response !== false ? '200' : '400';
 
 		return array('body'=>$body, 'code'=>$code);

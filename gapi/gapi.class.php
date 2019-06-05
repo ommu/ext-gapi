@@ -55,7 +55,7 @@ class gapi
 	public function __construct($client_email, $key_file, $delegate_email = null) 
 	{
 		if(version_compare(PHP_VERSION, '5.3.0') < 0)
-			throw new Exception(Yii::t('phrase', 'GAPI: PHP version $php is below minimum required 5.3.0.', array('$php'=>PHP_VERSION)));
+			throw new Exception(Yii::t('app', 'GAPI: PHP version $php is below minimum required 5.3.0.', array('$php'=>PHP_VERSION)));
 		
 		$this->auth_method = new gapiOAuth2();
 		$this->auth_method->fetchToken($client_email, $key_file, $delegate_email);
@@ -109,7 +109,7 @@ class gapi
 		if(substr($response['code'], 0, 1) == '2')
 			return $this->accountObjectMapper($response['body']);
 		else
-			throw new Exception(Yii::t('phrase', 'GAPI: Failed to request account data. Error: $error', array('$error'=>strip_tags($response['body']))));
+			throw new Exception(Yii::t('app', 'GAPI: Failed to request account data. Error: $error', array('$error'=>strip_tags($response['body']))));
 	}
 
 	/**
@@ -207,7 +207,7 @@ class gapi
 		if(substr($response['code'], 0, 1) == '2')
 			return $this->reportObjectMapper($response['body']);
 		else
-			throw new Exception(Yii::t('phrase', 'GAPI: Failed to request report data. Error: $error', array('$error'=>$this->cleanErrorResponse($response['body']))));
+			throw new Exception(Yii::t('app', 'GAPI: Failed to request report data. Error: $error', array('$error'=>$this->cleanErrorResponse($response['body']))));
 	}
 	
 	/**
@@ -391,7 +391,7 @@ class gapi
 	public function __call($name, $parameters) 
 	{
 		if(!preg_match('/^get/', $name))
-			throw new Exception(Yii::t('phrase', 'No such function $name', array('$name'=>$name)));
+			throw new Exception(Yii::t('app', 'No such function $name', array('$name'=>$name)));
 
 		$name = preg_replace('/^get/', '', $name);
 
@@ -405,7 +405,7 @@ class gapi
 		if($aggregate_metric_key)
 			return $this->report_aggregate_metrics[$aggregate_metric_key];
 
-		throw new Exception(Yii::t('phrase', 'No valid root parameter or aggregate metric called $name', array('$name'=>$name)));
+		throw new Exception(Yii::t('app', 'No valid root parameter or aggregate metric called $name', array('$name'=>$name)));
 	}
 	
 	/**

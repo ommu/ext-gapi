@@ -4,7 +4,7 @@
  *
  * @author Putra Sudaryanto <putra@ommu.co>
  * @contact (+62)856-299-4114
- * @copyright Copyright (c) 2017 Ommu Platform (www.ommu.co)
+ * @copyright Copyright (c) 2017 OMMU (www.ommu.co)
  * @created date 12 May 2017, 15:28 WIB
  * @modified date 03 June 2019, 01:41 WIB
  * @link https://github.com/ommu/ext-gapi
